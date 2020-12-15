@@ -1,0 +1,14 @@
+.terraform
+*.tfstate
+*.tfstate.*
+*.plan
+.infra-dsl/cache
+.sw[a-p]
+.*.sw[a-p]
+Session.vim
+.netrwhist
+*~
+tags
+.idea
+*.iml
+tfplan.*

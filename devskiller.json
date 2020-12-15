@@ -1,0 +1,15 @@
+{
+    "verification": {
+        "testNamePatterns": [
+            ".*Verification.*"
+        ],
+        "pathPatterns": [
+            "**verification/verify**"
+        ]
+    },
+    "terraform": {
+        "configureProvider": [
+            "aws"
+        ]
+    }
+}
