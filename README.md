@@ -80,4 +80,4 @@ To define the Terraform specific variables in the descriptor use the following p
 
 A terraform task must include a `terraform` directory with an empty `empty.tf` file to ensure that terraform returns no error during the initialization of the task on the platform. This directory is also a place where candidate provide their solution code to be evaluated.  
 
-Unless a task or a cloud provider requires providing additional configuration (e.g. *features {}* for *zurerm*) there is no need to put a configuration stanza for providers in a task, as all configuration is provided by the platform and our Terraform runtime uses read-only credentials with a limited scope and privileges.
+Unless a task or a cloud provider requires providing additional configuration (e.g. *features {}* for *azurerm*) there is no need to put a configuration stanza for providers in a task, as all configuration is provided by the platform and our Terraform runtime uses read-only credentials with a limited scope and privileges.
