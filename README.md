@@ -71,11 +71,13 @@ You can find more details about the `devskiller.json` descriptor in our
 
 To define the Terraform specific variables in the descriptor use the following pattern:
 
-* `terraform.configureProvider` - a list of providers to configure for the task
-* **NOTE:** Currently  you can use only `aws` property. More coming soon! 
+* `terraform.configureProvider` - a list of providers to configure for the task. Here's the list of supported cloud providers:
+  * [aws](https://registry.terraform.io/providers/hashicorp/aws/latest)
+  * [azurerm](https://registry.terraform.io/providers/hashicorp/azurerm/latest)
+  * [google](https://registry.terraform.io/providers/hashicorp/google/latest/docs)
 
 ## Technical details for Terraform support
 
 A terraform task must include a `terraform` directory with an empty `empty.tf` file to ensure that terraform returns no error during the initialization of the task on the platform. This directory is also a place where candidate provide their solution code to be evaluated.  
 
-There is no need to provide a configuration for the terraform provider (e.g. `provider "aws" {...}` stanza), as all configuration is provided by the platform and uses read-only credentials with a limited scope and privileges.
+Unless a task or a cloud provider requires providing additional configuration (e.g. *features {}* for *zurerm*) there is no need to put a configuration stanza for providers in a task, as all configuration is provided by the platform and our Terraform runtime uses read-only credentials with a limited scope and privileges.
